@@ -1,0 +1,70 @@
+docker container port <containerName>
+- info about the port of container
+
+docker network ls
+- show networks
+
+docker network inspect
+- inspect a network
+      [
+    {
+        "Name": "bridge",
+        "Id": "a5e38575f071754c73a45cf7e0b43d1c61d558ca53d71daf728b22f024ecce14",
+        "Created": "2023-10-02T15:42:14.085694356Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "461da0d04f6f4eba6aa45ef8800abbb28f6acdfb50deaeaa169f849c27cadc62": {
+                "Name": "webmariadb",
+                "EndpointID": "e4a9e64294ac481962beae6948af8616666f15e74d2c72823ce3e1ee16049654",
+                "MacAddress": "02:42:ac:11:00:03",
+                "IPv4Address": "172.17.0.3/16",
+                "IPv6Address": ""
+            },
+            "ffaca373c6bd5dec3b6a7e657441617f7cc6c8cc08e114f91479b5428ccc7434": {
+                "Name": "webdb",
+                "EndpointID": "7a7368af39684bbc6be5c83b6296a1f987aa41ffd96ddbb48f4ecea1139d1b74",
+                "MacAddress": "02:42:ac:11:00:02",
+                "IPv4Address": "172.17.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",
+            "com.docker.network.bridge.enable_ip_masquerade": "true",
+            "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+            "com.docker.network.bridge.name": "docker0",
+            "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {}
+    }
+]
+
+
+docker network create --driver
+- create a network
+
+Attach a network to container
+- docker network connect
+
+docker network disconnect
+- Detach a network from container

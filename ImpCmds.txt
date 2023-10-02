@@ -1,0 +1,15 @@
+docker container top -process list in one container
+
+docker container inspect -details of one container config
+
+docker container stats -performance stats for all containers
+
+docker stats -show live performance data for all the containers
+
+docker container run -it -starts a new container interactivly
+docker container run -it --name proxy --publish 8080:80 nginx bash
+Here the command to the container is "bash"
+Container terminates as we exit from or stop bash
+docker container start -ai <containerName> ---to start a stopped container
+
+docker container exec -it -runs additional commands in existing containers

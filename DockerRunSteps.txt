@@ -1,0 +1,54 @@
+What happens in `docker container run --detach --publish 80:80 --name webhost nginx`:
+- Looks for the image locally in image cache, doesn't find anything
+- Then looks in the remote image repository
+- Downloads the latest version
+- Creates new container based on the image and prpares to start
+- Gives it a virtual ip on a private network inside docker engine
+- Opens up port 80 on the host and forwards to port 80 of executable running inside
+  the container
+- The container is started by the command specified in the docker file 
+
+
+Containers are really just restricted processes running on the OS kernel. 
+The executable files in those containers have to be built for the kernel they are running on. 
+For example, a Python image built for linux/x86_64 won't run as a python.exe on a Windows kernel. 
+This is why Docker Desktop uses a lightweight Linux VM to run your containers.
+
+From Docker's inception in 2013 to 2016, we could build images for multiple architectures 
+(amd64, arm/v6, arm/v7, i386, etc.) but not for the Windows kernel itself. Docker was Linux-only.
+
+In 2016 we got "Windows Containers" support from Microsoft.
+
+(sadly, there's no sign that we'll ever get "macOS Containers" from Apple.)
+
+To be clear, in this course, even on Windows with WSL, is running Linux-based images.
+
+Today Docker is more than Linux. When you think of images, realize they are always kernel 
+(Linux/Windows) and architecture (arm64, amd64, etc.) specific. Docker does this seamlessly in the 
+background with a "manifest". It downloads the best image for the platform your Docker Engine is 
+running on. Check out the --platform command for forcing a different image than your platform's native 
+kernel with docker run --help | grep platform
+
+This course still focuses on Linux x64 images because 95% of the concepts are the same, but 
+"Windows Containers" are possible with Windows-based binaries. Technically, they are native Windows .exe 
+binaries running in Docker containers on a Windows kernel, and have no Linux installed. 
+They use PowerShell.exe or CMD.exe in the Dockerfile RUN commands.
+
+You can enable Windows Container mode in Docker Desktop for Windows by clicking "Switch to Windows 
+containers" in the Docker whale menu, which then switches from WSL2 to Hyper-V running a slim Windows VM. 
+It's an either-or setting, so you'll want to switch back to "Linux containers" mode for this course.
+
+On Windows Server 2016 and newer, where you don't have Docker Desktop, you'll need to pick which container
+runtime to install, and then you have two ways to run containers. Natively on the host kernel without VMs, 
+called "process-isolation" mode, and the default "Hyper-V isolation" mode. Read here for more on isolation
+modes.
+
+Sadly, the truth is that Windows Containers never caught on in a major way, and after years of watching 
+teams trying to create and manage them, I see the trend of teams just moving their apps to support Linux, 
+rather than continuing to fight with the poor support of Windows Containers. Microsoft even built a 
+Windows-based MSSQL image, but has since discontinued it in 2021 in favor of their Linux-based MSSQL image.
+
+For those reasons, and seeing the challenges my consulting teams have in supporting Windows Containers 
+over the years, I still can't recommend Windows Containers in most cases. The .NET teams I know are moving 
+their codebase to .NET 5 on Linux, and adopting Linux containers. If this changes in the future, I will 
+update this lecture with current recommendations.

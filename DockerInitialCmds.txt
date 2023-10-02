@@ -153,3 +153,17 @@ docker run --name <customName> -d -e MYSQL_ROOT_PASSWORD=password -p 3030:3306 -
 to 3030 port of the host machine.
 Quick Note: All Info about the container can be found using `docker inspect <imageName>`.
 
+docker container run --publish 80:80 nginx
+- publish here exposes local port 80 in local machine and sends all traffic to executable running
+  inside the container
+
+docker container run --publish 80:80 --detach nginx
+- tells the container to run in the background
+
+docker container ls
+- lists out all the containers
+
+docker container run --detach --publish 80:80 --name webhost nginx
+
+docker container inspect <containerName>
+- metadata of how the container was started, and the steps while starting it
