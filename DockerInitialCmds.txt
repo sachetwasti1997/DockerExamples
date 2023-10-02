@@ -1,0 +1,155 @@
+docker exec -it <containerName> /bin/bash
+- run /bin/bash command into the container and attach it to the current terminal
+
+docker images
+- list all the docker images
+
+docker rmi <imageName>:TAG
+- removes the given container. To remove the image first the container running from it must be removed
+
+docker stop <containerId>
+- stops the given container
+
+docker rm <containerId>
+- removes the container
+
+docker inspect <imageName>
+- metadata of the image
+	docker inspect nginx
+		[
+    {
+        "Id": "sha256:61395b4c586da2b9b3b7ca903ea6a448e6783dfdd7f768ff2c1a0f3360aaba99",
+        "RepoTags": [
+            "nginx:latest"
+        ],
+        "RepoDigests": [
+            "nginx@sha256:32da30332506740a2f7c34d5dc70467b7f14ec67d912703568daff790ab3f755"
+        ],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2023-09-20T16:43:59.968055126Z",
+        "Container": "863fdcd387ea8acb8b74c9b28db01d3da0e154b1752e087c17ca1bf3dcb90d69",
+        "ContainerConfig": {
+            "Hostname": "863fdcd387ea",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.25.2",
+                "NJS_VERSION=0.8.0",
+                "PKG_RELEASE=1~bookworm"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"nginx\" \"-g\" \"daemon off;\"]"
+            ],
+            "Image": "sha256:3b2f458929e18623de347479de73236067715ac36681cf720ad29da0382df8fb",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "DockerVersion": "20.10.23",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.25.2",
+                "NJS_VERSION=0.8.0",
+                "PKG_RELEASE=1~bookworm"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "sha256:3b2f458929e18623de347479de73236067715ac36681cf720ad29da0382df8fb",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 186639942,
+        "VirtualSize": 186639942,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/d6b144d7fbc14bc21cb31a5fdaf9d5881b91431d14a6459fc8393b35758c8af0/diff:/var/lib/docker/overlay2/db01f59b3224bce226afacacd2f8633308e0a3247d09c48d510366f74011fef5/diff:/var/lib/docker/overlay2/e5f8027928b31c3581a1455e1de0cf48fccdefe514f10dc81e34d6ce2c461ba6/diff:/var/lib/docker/overlay2/0ed03fa6cd546999ff7679c49d759d69df98b4bdfa92a0488a1a350dfc6dc4e8/diff:/var/lib/docker/overlay2/3b4f6cd3e5df567f5ebfdadafa1a4931271628b4b321d14fb4135c94b1fd8780/diff:/var/lib/docker/overlay2/b0626664f9db623d8a9b432465c633d7358c97810aa0afd29a8f940cc4006850/diff",
+                "MergedDir": "/var/lib/docker/overlay2/23e29a1c5674041b1ca56df504413751199a13f8aa705a5ae6bca704953e5250/merged",
+                "UpperDir": "/var/lib/docker/overlay2/23e29a1c5674041b1ca56df504413751199a13f8aa705a5ae6bca704953e5250/diff",
+                "WorkDir": "/var/lib/docker/overlay2/23e29a1c5674041b1ca56df504413751199a13f8aa705a5ae6bca704953e5250/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:d310e774110ab038b30c6a5f7b7f7dd527dbe527854496bd30194b9ee6ea496e",
+                "sha256:eb7e3384f0ab3a08dd0163ab66625d954e511e8fa112c09923e261418c8524cb",
+                "sha256:1dc45c680d0f1615d45021e85028c5d2089468518ec44b7aeeb947cdf0b22364",
+                "sha256:ea43d4f82a03877421d6bed1db76fd58f87555193a7921cefb22d6067d8963a7",
+                "sha256:9c6261b5d19808f0feab896f5f65c0f6287aa8589f880d4af64414608e54c023",
+                "sha256:a7e2a768c198ee94c3a3e8a1cc199a69510da1e39fd85beddc2d4f3200a21d1e",
+                "sha256:d26d4f0eb474290793ba42d20b4880daa7c6ddf0379adeb1c121e04f2840712e"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
+
+When we say docker run <imageName> - it first runs the script in Entrypoint, and then it runs the command that is in the CMD
+
+docker run -d -P nginx
+- this commnds runs the nginx and automatically does the port mapping
+
+docker logs will give the output of those initial commands that are run while starting the container
+
+docker run -d -P -e <variables>=<values> <imageName>:<TAG>
+- runs the docker image in detached mode, assigns a random port. We have set few variables using -e
+
+docker run --name <customName> <imageName>
+- gives a name to the container running
+
+docker run --name <customName> -d -e MYSQL_ROOT_PASSWORD=password -p 3030:3306 -v /<pathToDir>:/var/lib/mysql mysql:5.7
+- this command gives a name to container running mysql image in detached mode, and attaches a variable. We are doing the port mapping from container's 3306 port
+to 3030 port of the host machine.
+Quick Note: All Info about the container can be found using `docker inspect <imageName>`.
+

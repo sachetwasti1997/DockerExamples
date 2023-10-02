@@ -1,0 +1,24 @@
+Container Data
+- The data doesn't persist when a container no longer exists, and it is difficult to get the data back if another process needs it
+- A container's writable layer is tightly coupled to the host machine where the container is running. We can't easily move the data somewhere else
+
+Docker has two options for containers to store file in the host machine
+- Volumes
+ - Managed by docker and all the data stored will be going to the host machine in folder as (/var/lib/docker/volumes/ -- data stored here) 
+- Bind Mounts
+ - stored anywhere on the host machine
+ 
+docker run --name <customName> -d -e MYSQL_ROOT_PASSWORD=password -p 3030:3306 -v /<pathToDir>:/var/lib/mysql mysql:5.7
+- this command gives a name to container running mysql image in detached mode, and attaches a variable. We are doing the port mapping from container's 3306 port
+to 3030 port of the host machine.
+Quick Note: All Info about the container can be found using `docker inspect <imageName>`.
+- Here we intend to do bind mapping of containers default storage location to some location on our system
+
+docker volume create <volumeName>
+- creates a volume with a name volumeName
+
+docker run --name <customName> -d -e MYSQL_ROOT_PASSWORD=password -p 3030:3306 -v <volumeName>:/var/lib/mysql mysql:5.7
+- this command gives a name to container running mysql image in detached mode, and attaches a variable. We are doing the port mapping from container's 3306 port
+to 3030 port of the host machine.
+Quick Note: All Info about the container can be found using `docker inspect <imageName>`.
+- Here bind storage to volumes directory that will be preserved even if the container is removed

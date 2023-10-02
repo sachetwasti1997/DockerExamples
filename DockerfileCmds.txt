@@ -1,0 +1,5 @@
+Entrypoint has a higher priority than CMD
+CMD contains arguments if entrypoint is already mentioned in the document. And in
+such dockerFile default argument will be the one supplied in CMD, and other than
+that we can give new arguments during `docker run` such that, that argument will 
+be run insted of one in CMD
