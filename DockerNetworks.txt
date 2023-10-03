@@ -1,3 +1,15 @@
+Bridge Network:- Default docker bridge network that is NAT'ed behind Host IP.
+Host Network:- Special network that skips the virtual networking of docker and attaches 
+               the container directly to the host interface
+None :- Its equivalant to having interface on network that is not attached to anything
+Network Driver:- Built in or 3rd party extensions that gives virtual network feature 
+
+Container Inter Communication
+- Container shouldn't rely on IP's for inter-communication
+- DNS for friendly names is build in if we use custom networks
+- Always it is advisable to use custom networks
+- It becomes easier using Docker Compose
+
 docker container port <containerName>
 - info about the port of container
 
@@ -60,7 +72,7 @@ docker network inspect
 ]
 
 
-docker network create --driver
+docker network create my_app_net 
 - create a network
 
 Attach a network to container
@@ -68,3 +80,15 @@ Attach a network to container
 
 docker network disconnect
 - Detach a network from container
+
+docker container run --detach --name new_nginx --network my_app_net nginx
+  get a new feature of automatic DNS resolution for all the containers in that virtual 
+  network from all the other containers in that virtual network using their container
+  names
+  - docker container run --detach --publish 8080:80 --name webproxy --network my_app_net nginx
+  - docker container run --detach --publish 8081:80 --name webhost --network my_app_net nginx
+  now above two can communicate with each other using
+  - docker container exec -it webproxy ping webhost
+  - docker container exec -it webhost ping webproxy
+
+docker network disconnect my_app_net webhost
