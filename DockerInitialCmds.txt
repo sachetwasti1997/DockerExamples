@@ -168,3 +168,6 @@ docker container run --detach --publish 80:80 --name webhost nginx
 
 docker container inspect <containerName>
 - metadata of how the container was started, and the steps while starting it
+
+docker container rm -f mysql_db
+- stop and remove a running container

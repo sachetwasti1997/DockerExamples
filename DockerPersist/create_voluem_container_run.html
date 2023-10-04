@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Volume</title>
+</head>
+<body>
+  <h1>Few Commands</h1>
+  <ul>
+    <li>
+      docker volume ls
+    </li>
+    <li>
+      docker volume inspect <volumeName>
+    </li>
+    <li>
+      docker volume create <volumeName>
+    </li>
+  </ul>
+  <h1>Creating Volume</h1>
+  <ul>
+    <li>
+      <h2><b>Use Command Below to create Named Volume</b>:</h2>
+      <p>
+        docker container run --detach --name mysql_db --env MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql 
+      </p>
+      <p>The name volume can be used for another mysql server too</p>
+    </li>
+  </ul>
+</body>
+</html>

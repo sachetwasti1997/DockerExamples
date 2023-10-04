@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Container LifeTime & Persisting Data</title>
+</head>
+<body>
+  <h1>Container LifeTime & Persisting Data</h1>
+  <ul>
+    <!-- # 1 ----------------------------------------------------------------------------------- -->
+    
+    <li>
+      <p>
+        Containers are usually immutable and ephemeral.
+      </p>
+      <p>
+        ie, unchanging and disposable
+      </p>
+    </li>
+    
+    <!-- # 2 ----------------------------------------------------------------------------------- -->
+    
+    <li>
+      <p>
+        Containers follow <b>"immutable infrastructure"</b>:
+        Only redeploy containers, never change.
+      </p>
+    </li>
+
+    <!-- # 3 ----------------------------------------------------------------------------------- -->
+    
+    <li>
+      <p>
+        This is ideal scenario for the container, but what about databases or unique data
+      </p>
+    </li>
+
+    <!-- # 4 ----------------------------------------------------------------------------------- -->
+    
+    <li>
+      Docker gives us feature to ensure this <b>"separation of concern".</b>
+    </li>
+    
+    <!--# 5 ----------------------------------------------------------------------------------- -->
+    
+    <li>
+      This is known as <b>persistent data.</b>
+    </li>
+
+    <!-- # 6 ----------------------------------------------------------------------------------- -->
+    
+    <li>
+      <p>There are two ways to solve the problem
+      <ol>
+        <li>Volumes</li>
+        <li>Bind Mounts</li>
+      </ol>
+      </p>
+    </li>
+
+    <!-- # 7 ----------------------------------------------------------------------------------- -->
+    
+    <li>
+      These steps prevent to loose data across container removals and allows us to attach
+      it to whatever container we want.
+    </li>
+    
+    <!-- # 8 ----------------------------------------------------------------------------------- -->
+    
+    <li>
+      <p>
+        <b>Volumes:</b> Make special location outside of container <b>Union File System.</b>
+      </p>
+    </li>
+    
+    <!-- # 9 ----------------------------------------------------------------------------------- -->
+  
+    <li>
+      <p>
+        <b>Bind Mounts:</b> Sharing or mounting a host directory or file into a container
+      </p>
+    </li>
+  
+    <!--# ----------------------------------------------------------------------------------- -->
+  </ul>
+</body>
+</html>
