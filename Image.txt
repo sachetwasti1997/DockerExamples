@@ -1,0 +1,12 @@
+Image is:
+- App binaries and dependencies for application
+- Metadata about the image data and how to run the image
+- An Image is an ordered collection of root fileSystem changes and 
+  the corresponding execution parameters for use within a container runtime
+- Inside the Image there is no complete OS. There is no Kernal, drivers ie Kernal Modules
+  It is only just the binaries that our application may need, and the host in which it
+  runs provides the kernal.
+
+Image Layers  
+- docker <imageName> history
+  - shows layer of changes made in image

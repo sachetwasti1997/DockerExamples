@@ -13,3 +13,6 @@ Container terminates as we exit from or stop bash
 docker container start -ai <containerName> ---to start a stopped container
 
 docker container exec -it -runs additional commands in existing containers
+
+docker container run --rm -it centos:7 bash
+- creates the container and removes after exit

@@ -1,0 +1,17 @@
+FROM - It is required command and takes the image specified after FROM as base layer
+ENV - (Optional)It injects the key/value pair into the image, for use later in the 
+      dockerfile. It works in every OS. 
+RUN - (Optional)Used to execute the shell commands inside the container as it is being 
+      built. It is generally used when we need to install software with a package 
+      repository or to do some unzipping or some file edits inside the container itself
+      it can also run shell scripts that is copied in earlier in the file or any 
+      commands that can be accessed inside the container at that point in the file
+EXPOSE - (Optional)exposes the port
+CMD - it is a required parameter that is the final command that is run everytime we launch
+      a new container from the image, or everytime we restart a stopped container
+
+If something is changed at a particular line in the dockerfile, everything below it 
+changes as well.
+
+It is advisable to keep at the top of the dockerfile that changes the least
+And the things that changes the most at the bottom of your dockerfile

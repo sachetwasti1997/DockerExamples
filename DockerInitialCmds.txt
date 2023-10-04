@@ -135,7 +135,8 @@ docker inspect <imageName>
     }
 ]
 
-When we say docker run <imageName> - it first runs the script in Entrypoint, and then it runs the command that is in the CMD
+When we say docker run <imageName> - it first runs the script in Entrypoint, 
+and then it runs the command that is in the CMD
 
 docker run -d -P nginx
 - this commnds runs the nginx and automatically does the port mapping
