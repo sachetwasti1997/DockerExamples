@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bind Mount with Jekyll</title>
+</head>
+<body>
+  <h1>Working with Bind Mounts</h1>
+  <ul>
+    <li>
+      <p>
+        Here I want to put Bind Mount into test working with Jekyll, so put jekyll
+        container to point to files in my system
+      </p>
+      <p>
+        Command Used: <b>docker container run --rm -p 80:4000 -v $(pwd):/srv/jekyll -it jekyll/jekyll bash -c 'chown jekyll:jekyll -R /usr/gem && jekyll serve'</b>
+      </p>
+    </li>
+  </ul>
+</body>
+</html>

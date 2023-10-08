@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bind Volume</title>
+</head>
+<body>
+  <h1>Bind Volumes</h1>
+  <li>Maps a host file or directory into container file or directory</li>
+  <li>Basically two locations pointing to the same file</li>
+  <li>Skips UFS and host file override in any container, same as Volumes</li>
+  <li>Can't be used in the Dockerfile, must be at container run</li>
+  <li>Eg, ... run -v /home/sachet/docker:/path/container</li>
+  <li>
+    Use the below command to point the container's given directory into host current directory
+    <ol>
+      <li>docker container run -d --name nginx_host -p 80:80 <b>-v $(pwd):/usr/share/nginx/html</b> nginx</li>
+    </ol>
+  </li>
+</body>
+</html>
