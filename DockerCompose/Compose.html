@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docker Compose</title>
+  </head>
+  <body>
+    <h1>Basics Compose</h1>
+    <ol>
+      <li>
+        <h2>docker-compose.yml</h2>
+        <ul>
+          <li>Compose Yaml format has it's own versions: 1, 2, 2.1, 3, 3.1</li>
+          <li>
+            YAML file can be used with <b>docker-compose</b> command for local
+            docker automation
+          </li>
+          <li>
+            It can also be used with <b>docker</b> directly in production with
+            Swarm
+          </li>
+          <li>
+            Some Important commands:
+            <ul>
+              <li>docker-compose --help</li>
+              <li>
+                docker-compose.yml is the default filename, but any other file
+                name can be used only that while running it we need to specify
+                it after -f
+                <b>docker-compose -f </b>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2>docker compose cli</h2>
+        <ul>
+          <li>
+            Not production-grade but ideal for local devlopment
+          </li>
+          <li>
+            Two most common commands are:
+            <ul>
+              <li>
+                docker compose up - setup volumes/networks start all containers
+              </li>
+              <li>
+                docker compose down - stop all containers and remove cont/vol/net
+              </li>
+            </ul>
+          </li>
+          <li>
+            Most important for new onboarding just with commands, if projects has 
+            <b>Dockerfile</b> and <b>docker-compose.yml</b>
+            <ul>
+              <li>git clone - to clone the repo</li>
+              <li>docker compose up</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </body>
+</html>
