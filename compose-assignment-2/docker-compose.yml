@@ -1,1 +1,28 @@
 # create your drupal and postgres config here, based off the last assignment
+services:
+  drupal:
+    image: custom-drupal
+    build: . # when we have both build and image, we are telling docker compose to build image from a specific location on local machine, and call image with that image name
+    ports:
+      - 8080:80
+    volumes:
+      - "drupel-modules:/var/www/html/modules" 
+      - "drupel-profiles:/var/www/html/profiles" 
+      - "drupel-sites:/var/www/html/sites" 
+      - "drupel-themes:/var/www/html/themes" 
+
+  mariadb:
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: db
+      MARIADB_PASSWORD: example
+    volumes:
+      - "drupel-data:/var/lib/mysql"
+
+volumes:
+  drupel-modules:
+  drupel-profiles:
+  drupel-sites:
+  drupel-themes:
+  drupel-data:
