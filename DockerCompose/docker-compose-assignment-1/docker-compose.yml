@@ -1,0 +1,19 @@
+services:
+  drupal:
+    image: drupal:8-apache
+    ports:
+      - 8080:80
+    volumes:
+      - "drupel-modules:/var/www/html/modules" 
+      - "drupel-profiles:/var/www/html/profiles" 
+      - "drupel-sites:/var/www/html/sites" 
+      - "drupel-themes:/var/www/html/themes" 
+  postgres:
+    image: postgres:10
+    environment:
+      POSTGRES_PASSWORD: example
+volumes:
+  drupel-modules:
+  drupel-profiles:
+  drupel-sites:
+  drupel-themes:
