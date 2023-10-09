@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swarm</title>
+</head>
+<body>
+  <h1>Some Swarm Commands</h1>
+  <ul>
+    <li>
+      docker node ls
+    </li>
+    <li>
+      docker swarm --help
+    </li>
+    <li>
+      docker service --help
+    </li>
+    <li>
+      In a cluster we dont care about individual node, we just give requirements
+      to the <b>swarm</b> in form of services. 
+      <p>And them it will orchastrate, how it needs to lay all that out, on which nodes
+        they need to be
+      </p>
+    </li>
+    <li>To create: docker service create <b>service</b>(eg, alpine ping 8.8.8.8)</li>
+    <li>
+      <p>To look for all services</p>
+      <p>docker service ls</p>
+      <p>To look for a container in the given service</p>
+      <p>docker service ps <b>serviceName</b> </p>
+    </li>
+    <li>
+      To update something in services
+      <p>docker service update <b>serviceId</b>(ryomxbxesall) <b>--update_parameter update</b> (eg, --replica 3)</p>
+    </li>
+  </ul>
+</body>
+</html>
